@@ -37,44 +37,11 @@ function App() {
   ])
 
   return (
-     <div class="container">
-   <div class="card">
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1fm3eODOzDzvdB_0D3eN09ZA2oXocTVLk8A&usqp=CAU" id="img-1" alt="image"/>
-       <div class="card-body">
-         <h5>BOOK</h5>
-         <p>RS-400</p>
-         <button>Add to cart</button>
-       </div>
+     <div>
+      <header>
+        <h1  class="head">PRODUCTS</h1>
+      </header>
      </div>
-
-     <div class="card">
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYtk0yi_ubOXwvJsOHpEmxbJ23gIi0vYxow&usqp=CAU"  id="img-2" alt="image"/>
-       <div class="card-body">
-         <h5>JEAN SHIRT</h5>
-         <p>RS-550</p>
-         <button>Add to cart</button>
-       </div>
-     </div>
-
-     <div class="card">
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQggxiUCrAr-eKG93gK548fWmkAd267UgFfYg&usqp=CAU"  img="img-3" alt="image"/>
-       <div class="card-body">
-         <h5>SPORT SHOE</h5>
-         <p>RS-1099</p>
-         <button>Add to cart</button>
-       </div>
-     </div>
-
-     <div class="card">
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ4QpXS-6XTTniPYBYIXRtvKh0GNu57ydR1dixOJVN_GwtQj8_xXszNoAo4QJ93txd-Sw&usqp=CAU"  id='img-4' alt="image"/>
-       <div class="card-body">
-         <h5>EAR-BUDS</h5>
-         <p>RS- 750</p>
-         <button>Add to cart</button>
-       </div>
-     </div>
-
- </div>
  )
 }
 
