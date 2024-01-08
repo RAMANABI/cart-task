@@ -1,20 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route,BrowserRouter as Router,Routes} from 'react-router-dom';
+import Product from './Product';
+import Cart from './Cart';
 
 function App() {
   const [products] = useState([
     {
       id:1,
-      name:"JEAN SHIRT",
-      price:"RS-650",
-      image1:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYtk0yi_ubOXwvJsOHpEmxbJ23gIi0vYxow&usqp=CAU"
-    },
-    {
-      id:2,
       name:"BAG",
-      price:"RS-450",
-      image:"https://www.tradeindia.com/_next/image/?url=https%3A%2F%2Ftiimg.tistatic.com%2Ffp%2F1%2F007%2F700%2Fstylish-comfortable-adjustable-shoulder-strap-grey-and-black-school-bag--529.jpg&w=750&q=75"
+      price:"RS-300",
+      image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP8pj7rY2v5kf6RpH3raSz0DVUHX1TwYX_GYDja9cUzwjT_CTzXQ0TmZM75tJ92htsI2Y&usqp=CAU"
     },
     {
       id:3,
@@ -34,15 +31,40 @@ function App() {
       price:"RS-250",
       image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1fm3eODOzDzvdB_0D3eN09ZA2oXocTVLk8A&usqp=CAU"
     },
-  ])
+  ]);
+
+ const[cart,setCart] = useState([]);
+
+const addCart=(product) => {
+  setCart([...cart, product])
+ }
+const removeCart = (producttoremove) => {
+  setCart(cart.filter(product => product !== producttoremove))
+ }
+    
+
 
   return (
-     <div>
+    <div>
       <header>
-        <h1  class="head">PRODUCTS</h1>
+        <h1 class="head">PRODUCTS</h1>
       </header>
-     </div>
- )
+      <div class="container">
+        {products.map((product) => (
+          <div class="content">
+            <Product
+              product={product}
+              addToCart={addCart}
+              removeFromCart={removeCart}
+              isInCart={cart.includes(product)}
+            />
+          </div>
+        ))}
+
+        <Cart cartItems={cart} removeFromCart={removeCart} />
+      </div>
+    </div>
+  );
 }
 
 export default App
