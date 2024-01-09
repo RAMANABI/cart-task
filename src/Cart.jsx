@@ -9,15 +9,15 @@ function Cart({cartItems, removeFromCart}) {
       <div className="container">
         {cartItems.map((item) => (
           <div className="content" key={item.id}>
-            <h3>{item.name}</h3>
             <img src={item.image} />
-            <button  id='btn'onClick={() => removeFromCart(item)}>
+            <h3>{item.name}</h3>
+            <h6>{item.price}</h6>
+            <button id="btn" onClick={() => removeFromCart(item)}>
               Remove From Cart
             </button>
           </div>
         ))}
       </div>
-      
     </>
   );
 }
